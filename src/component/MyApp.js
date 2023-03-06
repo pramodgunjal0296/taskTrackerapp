@@ -59,7 +59,7 @@ export default function MyApp() {
   return (
     <section className="container m-auto flex justify-center flex-col bg-gray-100  ">
       <header className="flex items-center bg-gray-900 text-white p-4 top-0 fixed w-full uppercase justify-center">
-        <label className="text-3xl">Task Tracking Application</label>
+        <label className="text-3xl">Time-Tracking Application</label>
       </header>
       <div
         style={{ top: "20%" }}

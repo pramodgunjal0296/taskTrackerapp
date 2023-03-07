@@ -100,7 +100,6 @@ export default function MyApp() {
             >
               Save
             </button>
-
             {isOpen && (
               <>
                 <div className="justify-center   items-center flex overflow-x-hidden overflow-y-auto fixed inset-0  z-100 outline-none focus:outline-none">
@@ -180,25 +179,31 @@ export default function MyApp() {
                 <th className="px-6 py-3 text-center">Time Tracked</th>
               </tr>
             </thead>
-            <tbody>
-              {tasks.map((task, index) => (
-                <tr
-                  key={index}
-                  className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
-                >
-                  <td className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-white text-center ">
-                    {task.title}
-                  </td>
-                  <td className="text-center px-6 py-4">{task.description}</td>
-                  <td className="text-center px-6 py-4">{`${task.timeTracked}`}</td>
-                </tr>
-              ))}
+            <tbody className="text-center ">
+              {tasks.length == 0
+                ? "No Task to display"
+                : tasks.map((task, index) => (
+                    <tr
+                      key={index}
+                      className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+                    >
+                      <td className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-white text-center ">
+                        {task.title}
+                      </td>
+                      <td className="text-center px-6 py-4">
+                        {task.description}
+                      </td>
+                      <td className="text-center px-6 py-4">{`${task.timeTracked}`}</td>
+                    </tr>
+                  ))}
             </tbody>
           </table>
         </div>
       </div>
       <footer className="flex justify-center m-auto w-full bg-black p-4 bottom-0 fixed ">
-        <label className="text-white font-bold">This App is Developed By  @pramodgunjal </label>
+        <label className="text-white font-bold">
+          This App is Developed By @pramodgunjal{" "}
+        </label>
       </footer>
     </section>
   );

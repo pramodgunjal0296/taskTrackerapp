@@ -66,12 +66,16 @@ export default function MyApp() {
         className=" fixed flex flex-row m-auto items-center w-full justify-center gap-20"
       >
         <div className="flex flex-col items-center justify-center w-1/2  ">
-          <h1 className="text-3xl font-bold mb-2">Timer Section</h1>
+          <h1 className="text-3xl font-bold mb-2" ariaLabel="Timer Section">
+            Timer Section
+          </h1>
           <div className="text-2xl font-medium mb-2">
             {moment.utc(timer * 1000).format("HH:mm:ss")}
           </div>
           <div className="flex space-x-4">
             <button
+              ariaLabel="button"
+              ariaRequired="true"
               className={`px-4 py-2 bg-blue-500 text-white rounded ${
                 isRunning && "opacity-50 cursor-not-allowed"
               }`}
